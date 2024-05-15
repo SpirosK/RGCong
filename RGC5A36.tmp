@@ -1,0 +1,63 @@
+[gd_scene load_steps=7 format=3 uid="uid://3xyxmk5b7axh"]
+
+[ext_resource type="Script" path="res://left_paddle.gd" id="1_685ic"]
+[ext_resource type="Script" path="res://right_paddle.gd" id="2_amkvx"]
+[ext_resource type="Script" path="res://ball.gd" id="3_w5st8"]
+[ext_resource type="Texture2D" uid="uid://ccyakjat5f1a5" path="res://sprites/ball.png" id="4_42g75"]
+[ext_resource type="FontFile" uid="uid://iu63cwivqlur" path="res://font/PixelFont.ttf" id="5_so4j0"]
+
+[sub_resource type="Theme" id="Theme_4dsr5"]
+
+[node name="RGCong_play" type="Node2D"]
+
+[node name="white border" type="ColorRect" parent="."]
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="playing_area" type="ColorRect" parent="."]
+unique_name_in_owner = true
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 1278.0
+offset_bottom = 718.0
+color = Color(0.0431373, 0, 0.0431373, 1)
+
+[node name="left_paddle" type="Node2D" parent="playing_area"]
+unique_name_in_owner = true
+script = ExtResource("1_685ic")
+
+[node name="left_paddle_rect" type="ColorRect" parent="playing_area/left_paddle"]
+unique_name_in_owner = true
+offset_right = 10.0
+offset_bottom = 130.0
+metadata/_edit_use_anchors_ = true
+
+[node name="right_paddle" type="Node2D" parent="playing_area"]
+unique_name_in_owner = true
+script = ExtResource("2_amkvx")
+
+[node name="right_paddle_rect" type="ColorRect" parent="playing_area/right_paddle"]
+unique_name_in_owner = true
+offset_right = 10.0
+offset_bottom = 130.0
+metadata/_edit_use_anchors_ = true
+
+[node name="ball" type="Node2D" parent="playing_area"]
+unique_name_in_owner = true
+script = ExtResource("3_w5st8")
+
+[node name="ball_sprite" type="Sprite2D" parent="playing_area/ball"]
+unique_name_in_owner = true
+texture = ExtResource("4_42g75")
+
+[node name="Score" type="Label" parent="playing_area"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 484.0
+offset_top = 57.0
+offset_right = 750.0
+offset_bottom = 226.0
+theme = SubResource("Theme_4dsr5")
+theme_override_fonts/font = ExtResource("5_so4j0")
+theme_override_font_sizes/font_size = 150
+text = "0 - 0"

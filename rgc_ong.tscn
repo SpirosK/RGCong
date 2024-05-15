@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bydub56hryp27"]
+
+[ext_resource type="PackedScene" uid="uid://3xyxmk5b7axh" path="res://RGCong_play.tscn" id="2_6qtu1"]
+[ext_resource type="PackedScene" uid="uid://dq17ci1408sst" path="res://RGCong_menu.tscn" id="7_3wyr3"]
+
+[node name="RGCong_game" type="Node2D"]
+
+[node name="RGCong_menu" parent="." instance=ExtResource("7_3wyr3")]
+
+[node name="RGCong_play" parent="." instance=ExtResource("2_6qtu1")]

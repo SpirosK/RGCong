@@ -1,0 +1,76 @@
+[gd_scene load_steps=3 format=3 uid="uid://dq17ci1408sst"]
+
+[ext_resource type="Script" path="res://menu_area.gd" id="1_2pwjb"]
+[ext_resource type="FontFile" uid="uid://iu63cwivqlur" path="res://font/PixelFont.ttf" id="1_fvldp"]
+
+[node name="RGCong_menu" type="Node2D"]
+
+[node name="white border" type="ColorRect" parent="."]
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="menu_area" type="ColorRect" parent="."]
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 1278.0
+offset_bottom = 718.0
+color = Color(0.0431373, 0, 0.0431373, 1)
+script = ExtResource("1_2pwjb")
+
+[node name="label_choose" type="Label" parent="menu_area"]
+layout_mode = 0
+offset_left = 269.0
+offset_top = 80.0
+offset_right = 972.0
+offset_bottom = 133.0
+theme_override_fonts/font = ExtResource("1_fvldp")
+theme_override_font_sizes/font_size = 92
+text = "Choose Difficulty"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="button_easy" type="Button" parent="menu_area"]
+layout_mode = 0
+offset_left = 292.0
+offset_top = 207.0
+offset_right = 962.0
+offset_bottom = 268.0
+theme_override_fonts/font = ExtResource("1_fvldp")
+theme_override_font_sizes/font_size = 92
+text = "CASUAL PING PONG"
+
+[node name="button_medium" type="Button" parent="menu_area"]
+layout_mode = 0
+offset_left = 182.0
+offset_top = 311.0
+offset_right = 1110.0
+offset_bottom = 372.0
+theme_override_fonts/font = ExtResource("1_fvldp")
+theme_override_font_sizes/font_size = 92
+text = "CHAMPIONSHIP PING PONG"
+
+[node name="button_hard" type="Button" parent="menu_area"]
+layout_mode = 0
+offset_left = 289.0
+offset_top = 419.0
+offset_right = 1002.0
+offset_bottom = 480.0
+theme_override_fonts/font = ExtResource("1_fvldp")
+theme_override_font_sizes/font_size = 92
+text = "THE RACKET IS A LIE"
+
+[node name="label_result" type="Label" parent="menu_area"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 304.0
+offset_top = 567.0
+offset_right = 1007.0
+offset_bottom = 620.0
+theme_override_fonts/font = ExtResource("1_fvldp")
+theme_override_font_sizes/font_size = 92
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="menu_area/button_easy" to="menu_area" method="_on_button_pressed" binds= [1]]
+[connection signal="pressed" from="menu_area/button_medium" to="menu_area" method="_on_button_pressed" binds= [2]]
+[connection signal="pressed" from="menu_area/button_hard" to="menu_area" method="_on_button_pressed" binds= [3]]
